@@ -31,13 +31,15 @@
     <tbody>
         <tr>
             <td>
-                <div class="content-table">
-                    <app-card-saving-account 
+                <div class="content-table" id="Card-saving-account">
+                    <app-card-saving-account
                         [viewItemInputSavingAccount]="viewSavingAccount" 
                         (change)="viewSavingAccount"
                         *ngIf="viewSavingAccount" 
                     ></app-card-saving-account>
-                    <app-table-saving-account (viewOutputItemSavingAccount)="viewSavingAccountOfTable($event)" ></app-table-saving-account>
+                    <app-table-saving-account
+                    (viewOutputItemSavingAccount)="viewSavingAccountOfTable($event)" 
+                    ></app-table-saving-account>
                 </div>
             </td>
             <td>

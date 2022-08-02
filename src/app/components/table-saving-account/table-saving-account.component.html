@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr (click)="viewSavingAccount(itemSavingAccount)" style="cursor: pointer;" *ngFor="let itemSavingAccount of listSavingAccount">
+        <tr  (click)="viewSavingAccount(itemSavingAccount)" style="cursor: pointer;" *ngFor="let itemSavingAccount of listSavingAccount">
             <td style="text-align: center">{{itemSavingAccount.cuenta.numeroCuenta}}</td>
             <td style="text-align: center">{{itemSavingAccount.cuenta.idCliente}}</td>
             <td class="firstColTable">{{itemSavingAccount.cuenta.saldo |currency }}</td>

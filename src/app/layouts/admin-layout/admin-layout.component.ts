@@ -23,6 +23,19 @@ export class AdminLayoutComponent implements OnInit {
 
   viewSavingAccountOfTable(emitedItemSavingAccount:ISavingAccount){
     this.viewSavingAccount = emitedItemSavingAccount
+    let card = document
+    .querySelector('#Card-saving-account')
+    .scrollIntoView(
+      {
+        behavior:'smooth',
+        block:'start'
+      }
+    )
+    window.scroll({
+      top:0,
+      left:0,
+      behavior:'smooth'
+    })
   }
 
   logOut(){
