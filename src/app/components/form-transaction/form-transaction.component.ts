@@ -27,7 +27,6 @@ export class FormTransactionComponent implements OnInit {
     this.transactionControl.controls["numeroCuenta"].setValue(ACCOUNT)
   }
   ngOnInit(): void {
-    console.log(this.savingAccountToPost);
     
     if (this.savingAccountToPost) {
       this.savingAccountData = this.savingAccountToPost
@@ -57,13 +56,11 @@ export class FormTransactionComponent implements OnInit {
       .postTransaction(this.transactionData)
       .subscribe(
         (res) => {
-          console.log(res)
-          this.router.navigate(["/transaccion"])
+          window.location.reload()
         }
       )
     }else this.onResetForm()
 
-    console.log(this.transactionData)
   }
 
   onResetForm(){

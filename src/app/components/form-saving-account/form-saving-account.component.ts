@@ -36,16 +36,16 @@ export class FormSavingAccountComponent implements OnInit, OnChanges {
       .subscribe(
         (res) => {
           this.router.navigate(["cuenta-ahorro"])
+          window.location.reload()
+
         }
       )
     }else this.onResetForm()
 
-    console.log(this.savingAccountData)
     
   }
 
   ngOnInit(): void {
-    console.log(this.savingAccountToPost);
     if (this.savingAccountToPost) {
       this.savingAccountData = this.savingAccountToPost
       this.dataToPost()
@@ -53,7 +53,6 @@ export class FormSavingAccountComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-      console.log(changes.savingAccountToPost.currentValue);
       this.savingAccountData = changes.savingAccountToPost.currentValue
       this.dataToPost();
   }

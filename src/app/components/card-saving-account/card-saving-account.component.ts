@@ -13,7 +13,6 @@ export class CardSavingAccountComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.changeCardSavingAccount()
-    console.log(window.location.pathname);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

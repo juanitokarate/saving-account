@@ -18,8 +18,6 @@ export class AdminLayoutComponent implements OnInit {
   ngOnInit(): void {
     this.userEmail = this.jwtService.getEmailId()
     this.userImg ="./../../../assets/img/theme/default.png"
-    console.log(this.userEmail);
-    console.log(this.userImg);
     
   }
 
@@ -34,7 +32,6 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   imgClick(){
-    console.log(this.userImg);
     debugger
     if (this.userImg.toString() === "./../../../assets/img/theme/default.png") {
       this.userImg = "./../../../assets/img/theme/sketch.jpg"
