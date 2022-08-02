@@ -1,0 +1,51 @@
+<form #RegisterForm="ngForm" >
+    <div class="form-group">
+      <div>
+        <input
+          class="form-control"
+          style="padding-left: 10px;"
+          placeholder="EMAIL"
+          type="email"
+        />
+      </div>
+      <!-- <span 
+        style="color: red;" 
+        *ngIf="!email.valid && email.touched" 
+        class="label label-danger">CAMPO OBLIGATORIO
+      </span> -->
+    </div>
+    <div class="form-group">
+      <div>
+        <input
+          style="padding-left: 10px;"
+          class="form-control"
+          placeholder="CONTRASEÑA"
+          type="password"
+        />
+      </div>
+      <!-- <span 
+          style="color: red" 
+          *ngIf="!password.valid && password.touched" 
+          class="label label-danger">OBLIGATORIO
+        </span> -->
+    </div>
+    <div>
+      <input
+        class="custom-control-input"
+        id="returnSecureToken"
+        type="checkbox"
+        value="true"
+      />
+      <label class="custom-control-label" for="returnSecureToken">
+        <span class="text-muted">CONTROL</span>
+      </label>
+    </div>
+    <div class="text-center">
+      <button [disabled]="RegisterForm.form.valid" type="submit">
+        ENVIAR
+      </button>
+    </div>
+  </form>
+  <p>
+    <span>¿TIENES CUENTA? </span><a [routerLink]="['/login']">INICIAR SESIÓN</a>
+  </p>

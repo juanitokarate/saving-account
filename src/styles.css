@@ -1,0 +1,57 @@
+body{
+    background-color: #e3e3e3;
+}
+.input-disabled{
+    background: #e3e3e3;
+    border: none;
+}
+.content-table table th{
+    top: 0;
+    position: sticky;
+    background-color: #c4c4c4;;
+}
+.content-table table tbody{
+    overflow: auto;
+}
+.table-master{
+    margin: auto;
+    width: -webkit-fill-available;
+}
+.content-table{
+    height: 600px;
+    width: 600px;
+    overflow-y: auto; 
+    margin: auto;  
+}
+table:not(.table-master-auth){
+    width: -webkit-fill-available;
+}
+
+.firstColTable{
+    text-align: right !important
+}
+.secondColTable{
+    text-align: left !important
+}
+.custom-true{
+    accent-color: green;
+
+}
+.custom-false{
+    accent-color: red;
+}
+.option-radio-group{
+    display: flex;
+    justify-content: center;
+}
+.content-table::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    border: 2px solid #f6f6f6;
+}
+.content-table::-webkit-scrollbar {
+    width:10px;
+}
+.spacer{
+    flex: .8888;
+}

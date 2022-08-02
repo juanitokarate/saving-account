@@ -1,0 +1,13 @@
+
+<table style="
+    margin: auto;
+    text-align: center;
+    position: relative;">
+    <tbody>
+        <tr>
+            <td>
+                <app-form-saving-account (change)="postSavingAccount" *ngIf="postSavingAccount" [savingAccountToPost]="postSavingAccount"></app-form-saving-account>
+            </td>
+         </tr>
+    </tbody>
+</table>

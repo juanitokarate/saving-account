@@ -1,0 +1,14 @@
+<table style="
+    margin: auto;
+    text-align: center;
+    position: relative;">
+    <tbody>
+        <tr>
+            <td>
+                <app-form-transaction *ngIf="postSavingAccount" [savingAccountToPost]="postSavingAccount"></app-form-transaction>
+                <button (click)="showListTransaction = !showListTransaction">{{ !showListTransaction?'MOSTRAR':'OCULTAR' }} </button>
+                <app-table-transaction [hidden]="!showListTransaction"></app-table-transaction>
+            </td>
+        </tr>
+    </tbody>
+</table>

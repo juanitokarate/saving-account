@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>    
+            <th><br></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itemTransaction of listTransaction">
+            <td style="text-align: center">{{itemTransaction.transaccion.numeroCuenta}}</td>
+            <td style="text-align: center">{{itemTransaction.transaccion.terminal}}</td>
+            <td class="firstColTable">{{itemTransaction.transaccion.monto |currency}}</td>
+         </tr>
+    </tbody>
+</table>

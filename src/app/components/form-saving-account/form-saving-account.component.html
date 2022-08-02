@@ -1,0 +1,119 @@
+<form #SavingAccountForm="ngForm" [formGroup]="savingAccountControl" (ngSubmit)="onSaveForm()" >
+
+    <div class="form-group">
+      <div>
+        <input
+          formControlName="numeroCuenta"
+          class="form-control"
+          style="padding-left: 10px;"
+          placeholder="CUENTA"
+          type="text"
+        />
+      </div>
+      <span 
+        style="color: red" 
+        *ngIf="!numeroCuenta.valid && numeroCuenta.touched" 
+        class="label label-danger">OBLIGATORIO
+      </span>
+    </div>
+
+    <div class="form-group">
+      <div>
+        <input
+          formControlName="saldo"
+          class="form-control"
+          style="padding-left: 10px;"
+          placeholder="SALDO"
+          type="number"
+        />
+      </div>
+      <span 
+        style="color: red" 
+        *ngIf="!saldo.valid && saldo.touched" 
+        class="label label-danger">OBLIGATORIO
+      </span>
+    </div>
+    <div class="form-group">
+      <div>
+        <input
+          formControlName="fechaUltimaAct"
+          style="padding-left: 10px;"
+          class="form-control"
+          placeholder="FECHA"
+          type="date"
+        />
+      </div>
+      <span 
+          style="color: red" 
+          *ngIf="!fechaUltimaAct.valid && fechaUltimaAct.touched" 
+          class="label label-danger">OBLIGATORIO
+        </span>
+    </div>    
+    <div class="form-group option-radio-group">
+      <div>
+        <input
+          formControlName="estado"
+          class="custom-control-input custom-true"
+          id="estadoTrue"
+          type="radio"
+          name="estado"
+          value="ACTIVA"
+          checked
+        />
+        <label class="custom-control-label" for="estadoTrue">
+          <span class="text-muted">ACTIVA</span>
+        </label>
+      </div>
+      <div>
+        <input
+          class="custom-control-input custom-false"
+          formControlName="estado"
+          value="INACTIVA"
+          id="estadoFalse"
+          name="estado"
+          type="radio"
+        />
+        <label class="custom-control-label" for="estadoFalse">
+          <span class="text-muted">INACTIVA</span>
+        </label>
+      </div>
+      <span 
+        style="color: red" 
+        *ngIf="!estado.valid && estado.touched" 
+        class="label label-danger">ESTADO OBLIGATORIO
+      </span>
+    </div>
+    <div class="form-group">
+      <div>
+        <input
+          formControlName="idCliente"
+          class="form-control input-disabled"
+          style="padding-left: 10px;"
+          placeholder="CLIENTE"
+          type="text"
+          disabled
+        />
+      </div>
+      <span 
+        style="color: red" 
+        *ngIf="!idCliente.valid && idCliente.touched" 
+        class="label label-danger">OBLIGATORIO
+      </span>
+    </div>    
+
+    <div>
+      <input
+        class="custom-control-input"
+        id="customCheck"
+        type="checkbox"
+      />
+      <label class="custom-control-label" for="customCheck">
+        <span class="text-muted">CONTROL</span>
+      </label>
+    </div>
+    <div class="text-center">
+      <button [disabled]="!SavingAccountForm.form.valid" type="submit">
+        ENVIAR
+      </button>
+    </div>
+  </form>

@@ -1,0 +1,51 @@
+<nav>
+    <ul style="
+        display: flex;
+        list-style: none;
+        align-items: center;">
+        <li>
+            <a routerLink="/">
+                <img width="44" [src]="userImg"/> 
+            </a>
+        </li>
+        <li>
+            <a routerLink="/" style="cursor: pointer;">
+                {{userEmail | uppercase}}
+            </a>
+        </li>
+        <li style="margin-inline: 24px;"> 
+            <a  [routerLink]="['/cuenta-ahorro']" routerLinkActive="router-link-active">CUENTA AHORRO</a>
+        </li>
+        <li style="margin-inline: 24px;">
+            <a  [routerLink]="['/transaccion']">TRANSACCION</a>
+        </li>
+        <div class="spacer"></div>
+        <li >
+            <a title="CERRAR SESIÓN: {{userEmail | uppercase}}" [routerLink]="['/login']" style="cursor: pointer;" (click)="logOut()">
+                <span>SALIR</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<table class="table-master">
+    <tbody>
+        <tr>
+            <td>
+                <div class="content-table">
+                    <app-card-saving-account 
+                        [viewItemInputSavingAccount]="viewSavingAccount" 
+                        (change)="viewSavingAccount"
+                        *ngIf="viewSavingAccount" 
+                    ></app-card-saving-account>
+                    <app-table-saving-account (viewOutputItemSavingAccount)="viewSavingAccountOfTable($event)" ></app-table-saving-account>
+                </div>
+            </td>
+            <td>
+                <div class="content-table">
+                    <router-outlet></router-outlet>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

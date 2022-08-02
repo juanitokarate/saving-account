@@ -1,0 +1,61 @@
+
+<table>
+    <tbody>
+        <tr>
+            <td class="firstColTable"> 
+                <p>CUENTA</p>
+            </td>
+            <td>
+                <p>
+                    <span>: 
+                        <a [routerLink]="['transaccion', viewSavingAccount.name]" routerLinkActive="router-link-active">
+                            {{ viewSavingAccount.cuenta.numeroCuenta }}
+                        </a>
+                    </span>
+                </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="firstColTable">
+                <p>CLIENTE</p>
+            </td>
+            <td class="secondColTable">
+                <p>
+                    <span>: 
+                        <a [routerLink]="['cuenta-ahorro', viewSavingAccount.name]" routerLinkActive="router-link-active">
+                            {{ viewSavingAccount.cuenta.idCliente }}
+                        </a>
+                    </span>
+                </p>
+            </td>
+         </tr>
+         <tr>
+            <td class="firstColTable">
+                <p>ESTADO</p>
+            </td>
+            <td>
+                <p>
+                    <span>: {{ viewSavingAccount.cuenta.estado }}</span>
+                </p>
+            </td>
+         </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td class="firstColTable">
+                <p>FECHA</p>
+            </td>
+            <td class="secondColTable">
+                <p>
+                    <span>: {{ viewSavingAccount.cuenta.fechaUltimaAct }}</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstColTable"></td>
+          <td class="secondColTable">
+            <p><span> {{ viewSavingAccount.cuenta.saldo | currency:'MXN':'symbol-narrow':'.2-2'}}</span></p>
+          </td>
+        </tr>
+      </tfoot>
+</table>
