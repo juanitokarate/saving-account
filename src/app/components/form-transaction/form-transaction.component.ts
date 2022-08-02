@@ -56,7 +56,7 @@ export class FormTransactionComponent implements OnInit {
       .postTransaction(this.transactionData)
       .subscribe(
         (res) => {
-          window.location.reload()
+          this.router.navigate(["/transaccion"])
         }
       )
     }else this.onResetForm()
